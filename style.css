@@ -1,0 +1,410 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+    font-size: 2.6em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 16px #2980b9, 0 1px 0 #2c3e50;
+    background: linear-gradient(90deg, #2980b9 0%, #6dd5fa 100%);
+    border-radius: 16px;
+    padding: 24px 0 20px 0;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto 20px auto;
+    max-width: 700px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+form button {
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form button:hover {
+    background: #34495e;
+}
+
+#agenda {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    padding: 20px;
+}
+
+.dia {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    padding: 36px 32px;
+    width: 100%;
+    max-width: 540px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1.13em;
+}
+.dia h2 {
+    text-align: center;
+    font-size: 1.35em;
+    margin-bottom: 18px;
+    color: #2980b9;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #eaf6fb 0%, #b2e0f7 100%);
+    border-radius: 8px;
+    padding: 10px 0 8px 0;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+    text-shadow: 0 2px 8px #b2e0f7, 0 1px 0 #fff;
+}
+.dias-semana {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 40px;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+}
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+}
+.task-form .acciones-paquete, .task-form .botones-formulario, .task-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin: 0 auto 8px auto;
+}
+.task-form input,
+.task-form select,
+.task-form button {
+    width: 100%;
+    box-sizing: border-box;
+}
+.task-form button {
+    min-width: 90px;
+    height: 38px;
+    margin: 0 4px;
+    font-size: 0.85em;
+    padding: 5px 10px;
+}
+.task-form button,
+.acciones-paquete button {
+    background: linear-gradient(90deg, #2c3e50 60%, #2980b9 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 16px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(44,62,80,0.08);
+    transition: background 0.2s, transform 0.1s;
+    margin: 0 2px;
+    letter-spacing: 0.5px;
+}
+.task-form button:hover,
+.acciones-paquete button:hover {
+    background: linear-gradient(90deg, #2980b9 60%, #2c3e50 100%);
+    transform: translateY(-2px) scale(1.05);
+}
+.acciones-paquete .edit-btn {
+    background: linear-gradient(90deg, #f1c40f 60%, #f39c12 100%);
+    color: #333;
+}
+.acciones-paquete .edit-btn:hover {
+    background: linear-gradient(90deg, #f39c12 60%, #f1c40f 100%);
+}
+.acciones-paquete .delete-btn {
+    background: linear-gradient(90deg, #e74c3c 60%, #c0392b 100%);
+    color: #fff;
+}
+.acciones-paquete .delete-btn:hover {
+    background: linear-gradient(90deg, #c0392b 60%, #e74c3c 100%);
+}
+.acciones-paquete .save-btn {
+    background: linear-gradient(90deg, #27ae60 60%, #2ecc71 100%);
+    color: #fff;
+}
+.acciones-paquete .save-btn:hover {
+    background: linear-gradient(90deg, #2ecc71 60%, #27ae60 100%);
+}
+.acciones-paquete .cancel-btn {
+    background: linear-gradient(90deg, #7f8c8d 60%, #95a5a6 100%);
+    color: #fff;
+}
+.acciones-paquete .cancel-btn:hover {
+    background: linear-gradient(90deg, #95a5a6 60%, #7f8c8d 100%);
+}
+.acciones-paquete .add-btn {
+    background: linear-gradient(90deg, #2980b9 60%, #6dd5fa 100%);
+    color: #fff;
+}
+.acciones-paquete .add-btn:hover {
+    background: linear-gradient(90deg, #6dd5fa 60%, #2980b9 100%);
+}
+.task-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.task-priority {
+    font-size: 0.75em;
+    padding: 3px 5px;
+    border-radius: 4px;
+    min-width: 40px;
+    margin-left: -8px;
+    margin-right: 0;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-priority.alta {
+    background: #e74c3c;
+}
+.task-priority.media {
+    background: #f1c40f;
+    color: #333;
+}
+.task-priority.baja {
+    background: #27ae60;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr auto;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+    gap: 12px;
+}
+.task input[type="text"] {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.85em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 0 8px;
+    height: 38px;
+}
+.task select, .task-priority {
+    width: 100%;
+    min-width: 0;
+    font-size: 1.1em;
+    border-radius: 6px;
+    padding: 6px 18px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    min-width: 120px;
+    margin-left: 0;
+}
+.acciones-paquete {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+}
+.acciones-paquete button {
+    margin: 0;
+}
+.task > span, .task > .task-priority {
+    flex: 1 1 30%;
+    min-width: 0;
+    word-break: break-word;
+}
+.acciones-menu {
+    display: flex !important;
+    gap: 6px;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    min-width: unset;
+    padding: 0;
+}
+.acciones-btn {
+    display: none;
+}
+.sin-tareas {
+    color: #aaa;
+    text-align: center;
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+.form-error {
+    grid-column: 1 / -1;
+    color: #e74c3c;
+    font-size: 0.9em;
+    align-self: center;
+    margin-top: 2px;
+}
+.task input.add-name,
+.task input.add-date,
+.task input.add-time,
+.task select.add-priority {
+    margin-bottom: 6px;
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.task .acciones-paquete {
+    margin-top: 2px;
+    justify-content: flex-end;
+}
+.task input.add-name {
+    margin-left: -12px;
+}
+.task input.add-date,
+.task input.add-time {
+    margin-left: 0;
+}
+.task input.add-date {
+    background: #f8fafc;
+    border: 1px solid #bfc9d1;
+    color: #2c3e50;
+    font-size: 0.95em;
+    border-radius: 6px;
+    padding: 7px 12px;
+    height: 38px;
+    transition: border 0.2s;
+    box-shadow: 0 1px 2px rgba(44,62,80,0.04);
+    margin-bottom: 6px;
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.task input.add-date:focus {
+    border: 1.5px solid #2980b9;
+    outline: none;
+    background: #fff;
+}
+.task-date {
+    background: #eaf6fb;
+    color: #2980b9;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.95em;
+    margin-left: 4px;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.input-label {
+    min-width: 48px;
+    font-size: 0.97em;
+    color: #2c3e50;
+    font-weight: 500;
+    margin-right: 4px;
+}
+.task input.add-name {
+    margin-bottom: 6px;
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+.input-group input.add-date {
+    margin-right: 14px;
+}
+.input-group input.add-name {
+    flex: 2 1 0%;
+    min-width: 180px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+.input-group input.add-date {
+    flex: 1 1 0%;
+}
+.task-form .task-priority {
+    background: #eaf6fb;
+    border: 2px solid #2980b9;
+    color: #2c3e50;
+    font-size: 1.08em;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 8px 18px;
+    margin-bottom: 8px;
+    margin-top: 2px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+.task-form .task-priority:focus {
+    border: 2.5px solid #1a5a8a;
+    background: #fff;
+    outline: none;
+}
+
+@media (max-width: 1400px) {
+    .dias-semana {
+        gap: 32px 16px;
+    }
+    .dia {
+        width: 98vw;
+        max-width: 540px;
+    }
+}
+@media (max-width: 900px) {
+    .dias-semana {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px 0;
+    }
+    .dia {
+        width: 99vw;
+        max-width: 99vw;
+    }
+}
