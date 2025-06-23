@@ -189,16 +189,16 @@ form button:hover {
 }
 
 .task-priority {
-    font-size: 0.75em;
-    padding: 3px 5px;
+    font-size: 0.68em;
+    padding: 2px 4px;
     border-radius: 4px;
-    min-width: 40px;
+    min-width: 32px;
     margin-left: -8px;
     margin-right: 0;
     display: inline-block;
     text-align: center;
-    line-height: 1.2;
-    max-width: 60px;
+    line-height: 1.1;
+    max-width: 48px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -386,6 +386,10 @@ form button:hover {
     border: 2.5px solid #1a5a8a;
     background: #fff;
     outline: none;
+}
+.task-priority::before, .task-priority::after {
+    display: none !important;
+    content: none !important;
 }
 
 @media (max-width: 1400px) {

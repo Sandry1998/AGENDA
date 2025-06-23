@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span><strong>${tarea.nombre}</strong></span>
                     <span>${tarea.fecha ? `<span class='task-date'>📅 ${tarea.fecha}</span>` : ''}</span>
                     <span class="task-priority ${tarea.prioridad}">
-                        ${tarea.prioridad ? (tarea.prioridad === 'alta' ? '🔴 Alta' : tarea.prioridad === 'media' ? '🟡 Media' : '🟢 Baja') : ''}
+                        ${tarea.prioridad ? (tarea.prioridad === 'alta' ? 'Alta' : tarea.prioridad === 'media' ? 'Media' : 'Baja') : ''}
                     </span>
                 `;
                 agendaDia.appendChild(tareaDiv);
